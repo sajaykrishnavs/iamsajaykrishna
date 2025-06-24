@@ -221,7 +221,7 @@ Sreebala™</p>
   </section>
 
   <footer>
-    <p>© 2025 sajaykrishna.in | <span id="version">Loading version...</span> | Published on:<span id="created_at">Loading version...</span></p>
+    <p>© 2025 sajaykrishna.in | <span id="version">Loading version...</span> | Published on:  <span id="created_at">Loading version...</span></p>
     <p>Developed & Maintained by Sreebala HQ, Kunjithai</p>
   </footer>
 
@@ -241,17 +241,32 @@ Sreebala™</p>
     reveal(); // initial
   </script>
 
-
 <script>
   fetch("https://api.github.com/repos/sajaykrishnavs/i/releases/latest")
     .then(res => res.json())
     .then(data => {
+      // Set version tag
       document.getElementById("version").textContent = "Version: " + data.tag_name;
-      document.getElementById("created_at").textContent = " " + data.published_at;
+
+      // Convert published_at to IST
+      const publishedDate = new Date(data.published_at);
+      const formattedDate = publishedDate.toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+      });
+
+      document.getElementById("created_at").textContent = formattedDate;
     })
     .catch(err => {
       console.error("Failed to fetch version:", err);
       document.getElementById("version").textContent = "Version: N/A";
+      document.getElementById("created_at").textContent = "N/A";
     });
 </script>
 
