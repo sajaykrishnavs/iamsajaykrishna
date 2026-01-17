@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unified Social Life in Wall</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#008cc8,#92deff,#007d9c);
+      background-size: 400% 400%;
+      animation: gradientBG 25s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin: 40px 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.88);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      max-width: 540px;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 2.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    .left  { align-self: flex-start; }
+    .right { align-self: flex-end; }
+    .center { align-self: center; }
+
+    .flow-left  { transform: translateX(-120px) translateY(40px); }
+    .flow-right { transform: translateX(120px) translateY(40px); }
+    .flow-center { transform: translateY(120px) scale(0.95); }
+
+    .visible {
+      opacity: 1;
+      transform: translateX(0) translateY(0) scale(1);
+    }
+
+    iframe {
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Unified Social Media Wall</h1>
+
+    <div class="container">
+
+      <!-- X 1 -->
+      <div class="card left flow-left">
+        <blockquote class="twitter-tweet">
+          <a href="https://twitter.com/i/status/2008935376535314674"></a>
+        </blockquote>
+      </div>
+
+      <!-- LinkedIn 1 -->
+      <div class="card right flow-right">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7388013028329521152"
+          width="504" height="432" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- Instagram -->
+      <div class="card left flow-left">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DSjVSrdEVKW/"
+          data-instgrm-version="14"
+          style="max-width:540px;">
+        </blockquote>
+      </div>
+
+      <!-- X 2 -->
+      <div class="card right flow-right">
+        <blockquote class="twitter-tweet">
+          <a href="https://twitter.com/i/status/2008935379039309894"></a>
+        </blockquote>
+      </div>
+
+      <!-- LinkedIn 2 -->
+      <div class="card left flow-left">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7387446084274610176"
+          width="504" height="992" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- X 3 -->
+      <div class="card right flow-right">
+        <blockquote class="twitter-tweet">
+          <a href="https://twitter.com/i/status/2008935383565009124"></a>
+        </blockquote>
+      </div>
+
+      <!-- LinkedIn 3 -->
+      <div class="card left flow-left">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399037580551315457"
+          width="504" height="877" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- X 4 -->
+      <div class="card right flow-right">
+        <blockquote class="twitter-tweet">
+          <a href="https://twitter.com/i/status/2008935388145152118"></a>
+        </blockquote>
+      </div>
+
+      <!-- LinkedIn 4 -->
+      <div class="card left flow-left">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399036273946091520"
+          width="504" height="1759" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- X 5 -->
+      <div class="card right flow-right">
+        <blockquote class="twitter-tweet">
+          <a href="https://twitter.com/i/status/2008935393606111304"></a>
+        </blockquote>
+      </div>
+
+      <!-- Extra LinkedIn -->
+      <div class="card left flow-left">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7391856296251203584"
+          width="400" height="540" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="card right flow-right">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7351219983466590211"
+          width="400" height="540" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="card center flow-center">
+        <p style="font-weight:bold;text-align:center;">
+          ✨ End of Feed ✨<br/>
+          X · LinkedIn · Instagram
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script async src="https://platform.twitter.com/widgets.js"></script>
+  <script async src="//www.instagram.com/embed.js"></script>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
