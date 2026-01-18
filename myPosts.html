@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Unified Social Life in Wall</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unified Social Media Wall</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(#008cc8,#92deff,#007d9c);
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
       background-size: 400% 400%;
       animation: gradientBG 25s ease infinite;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
     }
 
     @keyframes gradientBG {
@@ -23,182 +27,242 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* Header */
+    .wall-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.25);
+    }
+
     h1 {
       color: #fff;
-      text-align: center;
-      margin: 40px 0;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      font-weight: 600;
     }
 
-    .container {
-      width: 90%;
-      max-width: 900px;
-      display: flex;
-      flex-direction: column;
-      gap: 50px;
-      margin-bottom: 60px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.88);
-      border-radius: 16px;
+    /* Social Cards */
+    .social-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 18px;
       padding: 20px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-      max-width: 540px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
       opacity: 0;
-      transform: translateY(60px);
-      transition: all 2.2s ease;
+      transform: translateY(80px);
+      transition: all 1.8s ease;
     }
 
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-    }
-
-    .left  { align-self: flex-start; }
-    .right { align-self: flex-end; }
-    .center { align-self: center; }
-
-    .flow-left  { transform: translateX(-120px) translateY(40px); }
-    .flow-right { transform: translateX(120px) translateY(40px); }
-    .flow-center { transform: translateY(120px) scale(0.95); }
-
-    .visible {
+    .social-card.visible {
       opacity: 1;
-      transform: translateX(0) translateY(0) scale(1);
+      transform: translateY(0);
+    }
+
+    .social-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
     }
 
     iframe {
-      border-radius: 12px;
+      border-radius: 14px;
+      width: 100% !important;
+    }
+
+    /* Alignment */
+    @media (min-width: 992px) {
+      .left-card { margin-right: auto; }
+      .right-card { margin-left: auto; }
+    }
+
+    /* Footer End */
+    .end-card {
+      background: linear-gradient(135deg, #007d9c, #00b4d8);
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-    
-  <div>
-     <a href="index.html"><button style="border: none;
-  color: rgb(255, 255, 255);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  background-color: #007d9c;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;">Back to Home</button></a>
-    <h1>Unified Social Media Wall</h1>
+
+<!-- Header -->
+<div class="wall-header py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="index.html" class="btn btn-outline-light btn-sm">⬅ Back to Home</a>
+    <h1 class="h4 m-0 text-center flex-grow-1" style="color: white;">Unified Social Media Wall</h1>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="container my-5">
+  <div class="row g-5">
+
+
+    <!-- ithu puthiyathu start new -->
+
+
+    <div class="col-12 col-lg-4 ms-lg-auto">
+      <div class="social-card right-card">
+       <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7417796749550829568" height="733" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+      </div>
+    </div>
+   <div class="col-12 col-lg-5 ms-lg-auto">
+      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7417796489671913473" height="972" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+    </div>
+
+
+    <!-- end  -->
+
 
    
 
-    <div class="container">
+    <!-- LinkedIn -->
+    <div class="col-12 col-lg-7 ms-lg-auto">
+      <div class="social-card left-card">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7388013028329521152"
+          height="430" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
 
-      <!-- X 1 -->
-      <div class="card left flow-left">
+    <!-- Instagram -->
+    <div class="col-12 col-lg-5">
+      <div class="social-card right-card">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DSjVSrdEVKW/"
+          data-instgrm-version="14">
+        </blockquote>
+      </div>
+    </div>
+
+     <!-- X -->
+    <div class="col-12 col-lg-7">
+      <div class="social-card left-card">
         <blockquote class="twitter-tweet">
           <a href="https://twitter.com/i/status/2008935376535314674"></a>
         </blockquote>
       </div>
+    </div>
 
-      <!-- LinkedIn 1 -->
-      <div class="card right flow-right">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7388013028329521152"
-          width="504" height="432" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <!-- Instagram -->
-      <div class="card left flow-left">
-        <blockquote class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/p/DSjVSrdEVKW/"
-          data-instgrm-version="14"
-          style="max-width:540px;">
-        </blockquote>
-      </div>
-
-      <!-- X 2 -->
-      <div class="card right flow-right">
+    <!-- X -->
+    <div class="col-12 col-lg-6 ms-lg-auto">
+      <div class="social-card right-card">
         <blockquote class="twitter-tweet">
           <a href="https://twitter.com/i/status/2008935379039309894"></a>
         </blockquote>
       </div>
+    </div>
 
-      <!-- LinkedIn 2 -->
-      <div class="card left flow-left">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7387446084274610176"
-          width="504" height="992" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <!-- X 3 -->
-      <div class="card right flow-right">
-        <blockquote class="twitter-tweet">
-          <a href="https://twitter.com/i/status/2008935383565009124"></a>
-        </blockquote>
-      </div>
-
-      <!-- LinkedIn 3 -->
-      <div class="card left flow-left">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399037580551315457"
-          width="504" height="877" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <!-- X 4 -->
-      <div class="card right flow-right">
+    <!-- X -->
+    <div class="col-12 col-lg-6 ms-lg-auto">
+      <div class="social-card left-card">
         <blockquote class="twitter-tweet">
           <a href="https://twitter.com/i/status/2008935388145152118"></a>
         </blockquote>
       </div>
-
-      <!-- LinkedIn 4 -->
-      <div class="card left flow-left">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399036273946091520"
-          width="504" height="1759" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <!-- X 5 -->
-      <div class="card right flow-right">
-        <blockquote class="twitter-tweet">
-          <a href="https://twitter.com/i/status/2008935393606111304"></a>
-        </blockquote>
-      </div>
-
-      <!-- Extra LinkedIn -->
-      <div class="card left flow-left">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7391856296251203584"
-          width="400" height="540" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <div class="card right flow-right">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7351219983466590211"
-          width="400" height="540" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <div class="card center flow-center">
-        <p style="font-weight:bold;text-align:center;">
-          ✨ End of Feed ✨<br/>
-          X · LinkedIn · Instagram
-        </p>
-      </div>
-
     </div>
+
+
+       <!-- LinkedIn -->
+    <div class="col-12 col-lg-6">
+      <div class="social-card right-card">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399036273946091520" height="1759" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></div>
+    </div>
+
+
+       <!-- LinkedIn -->
+    <div class="col-12 col-lg-4">
+      <div class="social-card left-card">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399038930475651073" height="877" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+      </div>
+    </div>
+
+
+
+       <!-- LinkedIn -->
+    <div class="col-12 col-lg-5">
+      <div class="social-card right-card">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399037580551315457"
+          height="880" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+
+
+    <!-- LinkedIn -->
+    <div class="col-12 col-lg-5">
+      <div class="social-card right-card">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7387446084274610176" height="992" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+      </div>
+    </div>
+
+    
+
+    <!-- END -->
+    <div class="col-12 col-md-8 mx-auto">
+      <div class="social-card end-card visible">
+        ✨ End of Feed ✨ <br>
+        X · LinkedIn · Instagram
+      </div>
+    </div>
+
+    <footer>
+    <p style="color: white;">© 2025 sajaykrishna.in | <span id="version">Loading version...</span> | Published on:  <span id="created_at">Loading version...</span></p>
+    <p style="color: white;">Developed & Maintained by Sreebala HQ, Kunjithai</p>
+  </footer>
+
+
   </div>
+</div>
 
-  <!-- Scripts -->
-  <script async src="https://platform.twitter.com/widgets.js"></script>
-  <script async src="//www.instagram.com/embed.js"></script>
+<!-- Scripts -->
+<script async src="https://platform.twitter.com/widgets.js"></script>
+<script async src="//www.instagram.com/embed.js"></script>
 
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.card').forEach(card => {
-      observer.observe(card);
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-  </script>
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.social-card').forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+
+
+<script>
+  fetch("https://api.github.com/repos/sajaykrishnavs/iamsajaykrishna/releases/latest")
+    .then(res => res.json())
+    .then(data => {
+      // Set version tag
+      document.getElementById("version").textContent = "Version: " + data.tag_name;
+
+      // Convert published_at to IST
+      const publishedDate = new Date(data.published_at);
+      const formattedDate = publishedDate.toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+      });
+
+      document.getElementById("created_at").textContent = formattedDate;
+    })
+    .catch(err => {
+      console.error("Failed to fetch version:", err);
+      document.getElementById("version").textContent = "Version: N/A";
+      document.getElementById("created_at").textContent = "N/A";
+    });
+</script>
 
 </body>
 </html>
