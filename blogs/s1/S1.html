@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Blog Post</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #333;
+      margin: 0;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #2f71ff, #2563eb);
+      color: white;
+      padding: 18px 30px;
+      display: flex;
+      font: 1em sans-serif;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .home-btn {
+      color: white;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .home-btn:hover {
+      background: white;
+      color: #2563eb;
+    }
+
+    /* Main Post */
+    .post {
+      max-width: 850px;
+      margin: 45px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .category {
+      display: inline-block;
+      background: #e8f0ff;
+      color: #2563eb;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #111827;
+      margin: 5px 0 15px;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    /* Author Information */
+    .author-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 18px 0;
+      margin-bottom: 30px;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      background: #2563eb;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .author-name {
+      font-weight: bold;
+      color: #222;
+    }
+
+    .post-info {
+      color: #888;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    /* Article */
+    p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .post-image {
+      width: 50%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 20px 0;
+      background: #ddd;
+    }
+
+    /* Tags */
+    .tags {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f0f2f5;
+      color: #555;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin: 5px 5px 5px 0;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 25px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-home:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .post {
+        margin: 25px 15px;
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 29px;
+      }
+
+      .post-image {
+        height: 100px;
+      }
+    }
+
+
+    .author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+.post-image {
+
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.post-image img {
+ 
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo" style="font-size:medium;">Sajaykrishna Valyakkal Sajeevan &nbsp;&nbsp;&nbsp;&nbsp; | (What If?)
+      <br> <small>Co-Founder & CTO at
+        Sreebala</small> </div>
+
+    <a href="../../blogs.html" class="home-btn">
+      🏠 Home
+    </a>
+  </header>
+
+
+  <!-- Blog Post -->
+  <article class="post">
+
+    <!-- Category -->
+    <span class="category">Sreebala</span>
+
+    <!-- Title -->
+    <h2>My life should be my answer to what I can do for my Nation. <br> What greater answer can I give than my life itself?</h2>
+
+    <p class="subtitle">
+      I don’t need a uniform to serve my nation. My life is for my Nation.
+    </p>
+
+
+    <!-- Author Information -->
+    <div class="author-box">
+
+      <div class="author-avatar">
+  <img src="../../20260923_170124.jpg" alt="Author">
+</div>
+
+
+      <div>
+        <div class="author-name">
+          Written by Sajaykrishna Valyakkal Sajeevan
+        </div>
+
+        <div class="post-info">
+          📅 Published: October 3, 2026
+          &nbsp; • &nbsp;
+          🔄 Updated: October 3, 2026
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+   <!-- Blog Image -->
+<div class="post-image">
+  <img src="../../20260923_170124.jpg" alt="Sreebala">
+</div>
+
+
+
+   
+    <p> I believe that loving our Nation means contributing to its future. Through Sreebala, I want to use technology
+      and innovation to create impact. </p>
+    <p> As Co-Founder & CTO, my goal is to build something from India that can make a meaningful impact. I believe in
+      learning, creating, working hard, and building a better future. </p>
+    <p> <strong>Think for Bharat. Build for Bharat. Grow with Bharat.</strong> </p>
+
+    <!-- Tags -->
+    <div class="tags">
+      <strong>Tags:</strong>
+
+      <span class="tag">Technology</span>
+
+    </div>
+
+
+  <a href="../../index.html" class="back-home">
+  ← Back to Home
+</a>
+
+
+  </article>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 My Blog. All rights reserved.
+  </footer>
+
+</body>
+
+</html>

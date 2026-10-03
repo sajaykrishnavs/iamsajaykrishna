@@ -9,7 +9,9 @@
 
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
@@ -23,8 +25,7 @@
     header {
       background: linear-gradient(135deg, #00c6ff, #0072ff);
       color: #fff;
-      padding: 10px 20px;
-      text-align: center;
+      padding: 10px 50px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -63,7 +64,7 @@
 
     section {
       padding: 20px 10px;
-      max-width: 1000px;
+      max-width: 1250px;
       margin: auto;
       opacity: 0;
       transform: translateY(30px);
@@ -149,151 +150,1651 @@
         font-size: 0.9rem;
       }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    /* Layout Styling */
+.profile-memories-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding:60px;
+  color: #009de1;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  border-radius: 30px;
+}
+
+/* Left Profile Area Enhancements */
+.hero-photo-area {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.photo-wrapper {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #86fbca, #184eff);
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.6;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.photo-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbfdff, #fffeff, #3b82f6);
+  z-index: 1;
+  animation: rotateRing 5s linear infinite;
+}
+
+.profile-photo {
+  position: relative;
+  width: 446px;
+  height: 346px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 2;
+  
+}
+
+.floating-card {
+  position: absolute;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 5;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+
+
+.floating-card.two {
+  bottom: 20px;
+  right: -40px;
+  color: #c084fc;
+  animation: floatCard 3s ease-in-out infinite alternate-reverse;
+}
+
+.profile-bio-tag {
+  text-align: center;
+  margin-top: 30px;
+  z-index: 3;
+}
+
+.profile-bio-tag h3 {
+  margin: 0 0 5px;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.profile-bio-tag p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+/* Right Memories & Polaroid Grid */
+.memories-container {
+  flex: 1.5;
+  min-width: 320px;
+  background-image: url("sreebalawolfsuniform.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 223, 223, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+}
+
+
+.memories-header h2 {
+  margin: 0 0 5px;
+  font-size: 1.6rem;
+  color: #f3f4f6;
+  text-align: start;
+}
+
+.memories-subtitle {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.polaroid-card {
+  background: #ffffff;
+  padding: 10px 10px 15px 10px;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(225, 184, 184, 0.2);
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-8px) rotate(0deg) scale(1.03);
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+  z-index: 10;
+}
+
+.polaroid-inner img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.polaroid-card .caption {
+  margin: 10px 0 0;
+  font-size: 0.75rem;
+  color: #1f2937;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Animations */
+@keyframes rotateRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.4; transform: scale(0.95); }
+  100% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Responsive breakpoint */
+@media (max-width: 768px) {
+  .profile-memories-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .floating-card.one { left: 0; }
+  .floating-card.two { right: 0; }
+}
+
+
+
+
+
+
+
+.blog-btn {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 16px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.95);
+  color: #0072ff !important;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none !important;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.3s ease;
+}
+
+.blog-btn:hover {
+  background: #0072ff;
+  color: #fff !important;
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  header {
+    padding-right: 120px;
+  }
+
+  .blog-btn {
+    right: 15px;
+    font-size: 0.8rem;
+    padding: 7px 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   MODERN ABOUT + CAREER DESIGN
+========================================================= */
+
+.about-section,
+.career-section {
+  max-width: 1250px;
+  padding: 90px 30px;
+}
+
+/* ---------- SECTION HEADING ---------- */
+
+.section-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+}
+
+.section-kicker {
+  display: inline-block;
+  color: #0072ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  border: none;
+  padding: 0;
+  margin: 0 0 15px;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: #111827;
+  font-weight: 700;
+}
+
+.section-heading p {
+  color: #6b7280;
+  font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 25px;
+}
+
+.about-main-card {
+  position: relative;
+  overflow: hidden;
+  padding: 45px;
+  border-radius: 25px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0,198,255,0.18),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #ffffff, #f5f9ff);
+
+  border: 1px solid rgba(0,114,255,0.08);
+  box-shadow: 0 20px 60px rgba(0,60,150,0.08);
+}
+
+.about-main-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -70px;
+  bottom: -70px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(0,198,255,0.12),
+    rgba(0,114,255,0.08)
+  );
+}
+
+.about-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+  margin-bottom: 25px;
+
+  color: white;
+  font-size: 1.4rem;
+
+  background: linear-gradient(
+    135deg,
+    #00c6ff,
+    #0072ff
+  );
+
+  box-shadow: 0 12px 25px rgba(0,114,255,0.25);
+}
+
+.about-label {
+  display: block;
+  color: #0072ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.about-main-card h3 {
+  max-width: 700px;
+  color: #111827;
+  font-size: 2rem;
+  line-height: 1.25;
+  margin-bottom: 22px;
+}
+
+.about-main-card p {
+  color: #596273;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.about-tags span {
+  padding: 7px 13px;
+  border-radius: 30px;
+
+  color: #0759c7;
+  background: #eaf4ff;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+
+/* ---------- ABOUT INFORMATION ---------- */
+
+.about-side {
+  display: grid;
+  gap: 15px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 22px;
+  background: #fff;
+
+  border: 1px solid #edf0f5;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.045);
+
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(0,114,255,0.2);
+  box-shadow: 0 15px 35px rgba(0,114,255,0.08);
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #0072ff;
+  background: #edf7ff;
+  border-radius: 13px;
+}
+
+.info-card small {
+  display: block;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 3px;
+}
+
+.info-card span:not(.info-icon),
+.info-card a {
+  color: #1f2937;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   CAREER TIMELINE
+========================================================= */
+
+.career-timeline {
+  position: relative;
+  max-width: 950px;
+  margin: auto;
+}
+
+.career-timeline::before {
+  content: "";
+  position: absolute;
+  left: 118px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+
+  background: linear-gradient(
+    to bottom,
+    #00c6ff,
+    #0072ff,
+    #dbeafe
+  );
+}
+
+.career-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 90px 55px 1fr;
+  gap: 0;
+  margin-bottom: 15px;
+}
+
+.career-year {
+  padding-top: 27px;
+
+  color: #0072ff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.career-dot {
+  position: relative;
+  width: 20px;
+  height: 20px;
+
+  margin: 28px auto 0;
+
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #0072ff;
+
+  z-index: 2;
+
+  box-shadow:
+    0 0 0 5px rgba(0,114,255,0.08);
+}
+
+.career-dot.active {
+  background: #00c6ff;
+  border-color: #0072ff;
+
+  box-shadow:
+    0 0 0 6px rgba(0,198,255,0.15),
+    0 0 25px rgba(0,114,255,0.3);
+}
+
+
+/* ---------- CAREER CARD ---------- */
+
+.career-card {
+  position: relative;
+  padding: 15px 15px;
+
+  background: rgba(255,255,255,0.95);
+
+  border: 1px solid #edf0f5;
+  border-radius: 20px;
+
+  box-shadow: 0 12px 35px rgba(0,0,0,0.055);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.career-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,114,255,0.18);
+  box-shadow: 0 20px 45px rgba(0,70,150,0.09);
+}
+
+.career-card.featured {
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f5faff
+    );
+
+  border-color: rgba(0,114,255,0.14);
+}
+
+.career-card.current {
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(0,198,255,0.16),
+      transparent 35%
+    ),
+    #ffffff;
+
+  border: 1px solid rgba(0,114,255,0.18);
+  box-shadow:
+    0 20px 55px rgba(0,114,255,0.11);
+}
+
+.career-category {
+  display: inline-block;
+
+  color: #0072ff;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+
+  margin-bottom: 8px;
+}
+
+.career-card h3 {
+  color: #111827;
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.career-card p {
+  color: #667085;
+  font-size: 0.94rem;
+}
+
+.career-card ul {
+  margin-top: 12px;
+  color: #667085;
+}
+
+.career-card li {
+  margin-bottom: 8px;
+}
+
+
+/* ---------- CURRENT BADGE ---------- */
+
+.current-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 11px;
+  margin-bottom: 18px;
+
+  border-radius: 30px;
+
+  color: #047857;
+  background: #ecfdf5;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.current-badge span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+
+  box-shadow: 0 0 0 4px rgba(16,185,129,0.12);
+
+  animation: currentPulse 2s infinite;
+}
+
+@keyframes currentPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+
+/* ---------- 2024 / 2025 PROJECT ROWS ---------- */
+
+.career-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 20px;
+  padding: 13px 15px;
+
+  background: #f7faff;
+  border-radius: 12px;
+
+  color: #475467;
+  font-size: 0.88rem;
+}
+
+.career-mini i {
+  color: #0072ff;
+}
+
+
+/* ---------- 2025 PROJECTS ---------- */
+
+.career-projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+.career-projects > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 14px;
+
+  background: #f8fbff;
+  border-radius: 13px;
+
+  color: #475467;
+  font-size: 0.82rem;
+}
+
+.career-projects i {
+  color: #0072ff;
+  margin-top: 3px;
+}
+
+
+/* ---------- 2026 GRID ---------- */
+
+.career-2026-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.mini-project {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  padding: 17px;
+
+  background: rgba(247,250,255,0.9);
+  border: 1px solid rgba(0,114,255,0.06);
+
+  border-radius: 15px;
+
+  transition: all 0.3s ease;
+}
+
+.mini-project:hover {
+  background: #fff;
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(0,114,255,0.08);
+}
+
+.mini-project > i {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #0072ff;
+  background: #eaf4ff;
+
+  border-radius: 10px;
+}
+
+.mini-project strong {
+  display: block;
+  color: #1f2937;
+  font-size: 0.88rem;
+  margin-bottom: 3px;
+}
+
+.mini-project p {
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .about-section,
+  .career-section {
+    padding: 65px 18px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-main-card {
+    padding: 30px;
+  }
+
+  .about-main-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .career-timeline::before {
+    left: 12px;
+  }
+
+  .career-item {
+    grid-template-columns: 35px 1fr;
+    gap: 15px;
+  }
+
+  .career-year {
+    position: absolute;
+    left: 35px;
+    top: -5px;
+
+    padding: 0;
+
+    text-align: left;
+
+    background: #fff;
+    padding-left: 8px;
+
+    z-index: 3;
+  }
+
+  .career-dot {
+    grid-column: 1;
+    grid-row: 1;
+
+    margin: 28px 0 0;
+  }
+
+  .career-card {
+    grid-column: 2;
+    padding: 25px 20px;
+    margin-top: 15px;
+  }
+
+  .career-projects,
+  .career-2026-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .section-heading h2 {
+    font-size: 2.1rem;
+  }
+
+  .about-main-card {
+    padding: 25px;
+  }
+
+  .info-card {
+    padding: 17px;
+  }
+
+  .career-card h3 {
+    font-size: 1.15rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   LEGACY & HONOR
+========================================================= */
+
+.legacy-section {
+  max-width: 1100px;
+  padding: 45px 20px;
+}
+
+.legacy-section .section-heading {
+  margin-bottom: 28px;
+}
+
+.legacy-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at 0% 50%,
+      rgba(255, 193, 7, 0.10),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #ffffff, #fafafa);
+
+  border: 1px solid #eee;
+  border-radius: 20px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+
+  overflow: hidden;
+}
+
+.legacy-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+
+  background: linear-gradient(
+    to bottom,
+    #ff9933,
+    #ffffff,
+    #138808
+  );
+}
+
+.legacy-medal {
+  width: 82px;
+  height: 82px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #b77900;
+  font-size: 2rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff4bd,
+      #ffd75a
+    );
+
+  border: 5px solid #fff;
+
+  box-shadow:
+    0 8px 25px rgba(180,130,0,0.2),
+    inset 0 0 0 2px rgba(180,130,0,0.15);
+}
+
+.legacy-content {
+  flex: 1;
+}
+
+.legacy-label {
+  display: block;
+
+  color: #a16b00;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  margin-bottom: 5px;
+}
+
+.legacy-content h3 {
+  color: #171717;
+  font-size: 1.45rem;
+  margin-bottom: 3px;
+}
+
+.legacy-role {
+  color: #596273;
+  font-size: 0.88rem;
+  margin-bottom: 15px;
+}
+
+.medal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.medal-list span {
+  padding: 5px 10px;
+
+  color: #735300;
+  background: #fff8df;
+
+  border: 1px solid #f5df9a;
+  border-radius: 20px;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.legacy-divider {
+  height: 1px;
+  background: #e8e8e8;
+  margin: 18px 0 14px;
+}
+
+.legacy-thanks {
+  color: #667085;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.legacy-thanks strong {
+  color: #333;
+}
+
+.legacy-motto {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 15px;
+
+  color: #9a6900;
+
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.legacy-motto i {
+  font-size: 0.55rem;
+  opacity: 0.7;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .legacy-section {
+    padding: 35px 15px;
+  }
+
+  .legacy-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 20px;
+    gap: 18px;
+  }
+
+  .legacy-medal {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+  }
+
+  .legacy-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .medal-list span {
+    font-size: 0.62rem;
+  }
+
+  .legacy-thanks {
+    font-size: 0.76rem;
+  }
+}
+
+
+
   </style>
   <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
 
   <header>
-    <h1>SAJAYKRISHNA VALYAKKAL SAJEEVAN</h1>
-    <p>Co-Founder & CTO at
-Sreebala™</p>
-    <nav>
+  <h3>Sajaykrishna Valyakkal Sajeevan</h3>
+  &nbsp;&nbsp;&nbsp;&nbsp; | Co-Founder & CTO at Sreebala
+
+  <a href="blogs.html" class="blog-btn">
+    <i class="fa-solid fa-pen-nib"></i> Writings
+  </a>
+</header>
+
+  <section class="profile-memories-section">
+  <!-- LEFT: PROFILE PHOTO AREA -->
+  <div class="hero-photo-area">
+    <div class="photo-wrapper">
+      <div class="photo-glow"></div>
+      <div class="photo-ring"></div>
+      <img
+        class="profile-photo"
+        src="8784.jpg"
+        alt="Sajaykrishna Valyakkal Sajeevan"
+      />
+
       
-      <a href="#about">About</a>
-      <a href="#projects">Career</a>
-      <a href="#honor">Honor</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <div style="text-align: center; margin-top: 30px;">
-  <img src="https://sajaykrishna.sreebala.in/Sajaykrishna%20Pic.jpg" alt="Sajaykrishna Profile" 
-       style="width: 160px; height: 160px; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); object-fit: cover;" />
+
+      <div class="floating-card two">
+        
+        Director / CTO, Sreebala
+      </div>
+    </div>
+    
+    <div class="profile-bio-tag">
+      <h3>Sajaykrishna Valyakkal Sajeevan</h3>
+      <p>I love to be an Indian Engineer | Resolver | Nationalist</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: MEMORIES & MILESTONES GALLERY -->
+  <div class="memories-container">
+    <div class="memories-header">
+      <h2>Sreebala Ethics are obeying... </h2>
+     <span class="memories-subtitle">engineer, dreamer, curious mind. building ideas, breaking things & having fun. ⚙️</span>
+    </div>
+
+    <div class="polaroid-grid">
+      <!-- Memory Item 1 -->
+      <div class="polaroid-card" style="--rot: -2deg;">
+        <div class="polaroid-inner">
+          <img src="20260923_170124.jpg" alt="Robotics Club">
+          <p class="caption">Engane undu enta pic super alle</p>
+        </div>
+      </div>
+
+      <!-- Memory Item 2 -->
+      <div class="polaroid-card" style="--rot: 1.5deg;">
+        <div class="polaroid-inner">
+          <img src="1777080125066.png" alt="Academic Milestone">
+          <p class="caption">Are you thing I'm a Corporate ? really ??</p>
+        </div>
+      </div>
+
+      <!-- Memory Item 3 -->
+      <div class="polaroid-card" style="--rot: -1.2deg;">
+        <div class="polaroid-inner">
+          <img src="Sajaykrishna Pic.jpg" alt="Research Presentation">
+          <p class="caption">I want to live as a boy for Sreebala, not as a man.</p>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
 </div>
 
-  <section id="about" class="visible">
-    <h2>About</h2>
-    <div class="card">
-      <div class="highlight">
-        I love investing my time in business research and development in the fields of Science, Engineering, R&D especially in Computer Science, AI, ML, and Robotics.</div>
-      <p><strong>Email:</strong> <a href="mailto:sajaykrishna@sreebala.in">sajaykrishna@sreebala.in</a></p>
-      <p><strong>Phone:</strong> (+91) 79026 72231</p>
-      <p><strong>Date of Birth:</strong> 11 June 2001</p>
-      <p><strong>Nationality:</strong> Indian</p>
-    </div>
-  </section>
 
-  <section id="projects" class="visible">
-    <h2>Career</h2>
-    <div class="card">
-  <ul>
-  <li><strong>2016</strong> – Assisted in daily operations at my father's grocery and stationery shop</li>
-  <li><strong>2017</strong> – Co-Founded <em>Sree Bala Subrahmanya Graphics & Designs</em></li>
-  <li><strong>2018</strong> – Rebranded as <em>Sreebala Graphics & Designs</em></li>
-  <li><strong>2021</strong> – As VLE in CSC e-Governce Services India Ltd </em></li>
-  <li><strong>2019</strong> – Initiated <em>Sreebala Marine</em>; launched <strong>Krishnanjali Boat</strong> project</li>
-  <li><strong>2021</strong> – Developed <strong>Kunjithai Temple Website</strong> as a devotional offering (First web project as <em>Guru Dakshina</em>)</li>
-  <li><strong>2022</strong> – 
-    <ul>
-      <li><strong>As BC</strong> –  in Bank of India </em></li>
-      <li>Released <strong>Kunjithai Temple Android App</strong> (Oct 28 – First Android project as <em>Dakshina</em>)</li>
-      <li>Launched <em>Sreebala Electronics and Automation</em></li>
-    </ul>
-  </li>
-  <li><strong>2024</strong> – 
-    <ul>
-      <li>Co-Founder & Designated Partner of <strong>SREEBALA TECHNOLOGY SERVICES LLP</strong> (April 24)</li>
-      <li>Co-Founder & Project Director of <strong>Sreebala Research & Innovation – DEV Department</strong></li>
-    </ul>
-  </li>
-  <li><strong>2025</strong> – 
-    <ul>
-      <li>Co-Founder & CTO <strong>SREEBALA</strong> (2025)</li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>Co-Founder & CTO <strong>SreebalaTaxi</strong>(SRI01)</li>
-      <li>Co-Founder & CEO <strong>Indino – Relationship Beyond Commerce</strong>(SRI02)</li>
-      <li>Engaged in a scientific R&D project <strong></strong>(2025)</li>
-      <li>Project Director for the development of <strong>Sreebala Fonts</strong> for <strong>SREEBALA</strong> (2025)</li>
-    </ul>
-  </li>
-
-
-  
-<li><strong>2026</strong> – 
-  <ul>
-    <li>
-      Began a new journey by signing an MoU for a 
-      <strong>Research, Development & Innovation (RD&I) Technology Platform</strong> under 
-      <strong>Sreebala™</strong>, laying the foundation for a 
-      <strong>Unified Advanced Technology Ecosystem</strong> connecting 
-      <strong>Healthcare, Biomedical Sciences, Food Technology, Information Technology, and Computer Science</strong>.
-    </li>
-    <li>
-      Launched the flagship <strong>“Astrology vs Astronomy” Research Program</strong> through the 
-      <strong>Sreebala™ Research Division</strong>, focusing on 
-      <strong>scientific validation, data-driven research, historical star mapping, and cultural-astronomical understanding</strong>, 
-      aiming to explore the universe while respecting both science and tradition.
-    </li>
-    <li>
-      Officially released the <strong>INDINO</strong> app on the 
-      <a href="https://play.google.com/store/apps/details?id=com.sreebala.indino" target="_blank">Google Play Store</a> in 
-      <strong>Test Mode (QA)</strong>, along with the website launch on 
-      <strong>April 15 (Vishu)</strong> at 
-      <a href="https://www.myindino.com" target="_blank">www.myindino.com</a>.
-    </li>
-
-
-<li>
-  Appointed as <strong>Chief Project Officer (CPO)</strong>, leading strategic project planning, execution, innovation initiatives, and technology-driven development across organizational programs. (2026)
-</li>
-
-<li>
-  Successfully completed major updates and feature enhancements for the 
-  <strong>Finest Matrimony</strong> platform, including improvements to 
-  <strong>user experience, profile management, matchmaking features, security, performance optimization, and overall platform stability</strong>, 
-  strengthening the foundation for future growth and scalability.
-  The platform is available at 
-  <a href="https://www.finestmatrimony.com" target="_blank">www.finestmatrimony.com</a>
-  and on the
-  <a href="https://play.google.com/store/apps/details?id=com.sreebala.finestmatrimony" target="_blank">Google Play Store</a>. (2026)
-</li>
-
-<li>
-  Concluded the tenure as <strong>Chief Project Officer (CPO)</strong> upon successful completion of responsibilities and project objectives. (2026)
-</li>
-
-<li>
-  Transitioned from the role of <strong>Chief Project Officer (CPO)</strong> to 
-  <strong>Chief Technology Officer (CTO)</strong> and 
-  <strong>Chief Engineer of Finest Matrimony</strong>, taking responsibility for technology leadership, engineering excellence, research & development, and the advancement of strategic initiatives within <strong>SREEBALA™</strong>. Under this role, continued the development and technological evolution of the 
-  <a href="https://www.finestmatrimony.com" target="_blank">Finest Matrimony</a> platform and its 
-  <a href="https://play.google.com/store/apps/details?id=com.sreebala.finestmatrimony" target="_blank">Mobile Application</a>. (2026)
-</li>
+ <!-- =========================
+     ABOUT
+========================= -->
+<section id="about" class="about-section visible">
+  <div class="section-heading">
     
-  </ul>
-</li>
+    <h3>About Me</h3>
+    <p>
+      Engineer, builder and technology researcher focused on turning
+      ambitious ideas into practical systems.
+    </p>
+  </div>
 
+  <div class="about-grid">
 
-    </div>
-  </section>
-
-  <section id="honor" class="visible">
-    <h2>Legacy & Honor</h2>
-    
-    <div class="card">
-      <div class="highlight">
-        <strong>SADASIVAN VALYAKKAL ECHARAN</strong><br>
-        🇮🇳 Indian Army & Navy Veteran <br>
-        Service: 1961–1998<br>
-        Medals: Poorvi Star, Raksha Medal, Sangram Medal, Sainya Seva Medal, Long Service Medal
+    <div class="about-main-card">
+      <div class="about-icon">
+        <i class="fa-solid fa-microchip"></i>
       </div>
-      <p>Gratitude to <strong>Sajeevan Valyakkal Sadasivan</strong>, CEO/Director of Sreebala, for the opportunity to lead engineering innovation at Sreebala.</p>
-      <p><em>“Bharat Seva Paramo Dharmah”</em></p>
+
+      <span class="about-label">ENGINEERING • RESEARCH • INNOVATION</span>
+
+      <h3>
+        Building technology with curiosity AND purpose.
+      </h3>
+
+      <p>
+        I love investing my time in business research and development
+        across Science, Engineering and R&D, with a particular interest
+        in Computer Science, Artificial Intelligence, Machine Learning,
+        Robotics and emerging technologies.
+      </p>
+
+      <p>
+        My journey combines entrepreneurship, engineering,
+        product development and research — from early business
+        experiments to building technology platforms under SREEBALA™.
+      </p>
+
+      <div class="about-tags">
+        <span>AI / ML</span>
+        <span>Robotics</span>
+        <span>R&D</span>
+        <span>Software Engineering</span>
+        <span>Technology</span>
+        <span>Entrepreneurship</span>
+      </div>
     </div>
-  </section>
+
+
+    <div class="about-side">
+
+      <div class="info-card">
+        <span class="info-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </span>
+        <div>
+          <small>EMAIL</small>
+          <a href="mailto:sajaykrishna@sreebala.in">
+            sajaykrishna@sreebala.in
+          </a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-icon">
+          <i class="fa-solid fa-phone"></i>
+        </span>
+        <div>
+          <small>PHONE</small>
+          <span>+91 79026 72231</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-icon">
+          <i class="fa-solid fa-calendar"></i>
+        </span>
+        <div>
+          <small>DATE OF BIRTH</small>
+          <span>11 June 2001</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-icon">
+          <i class="fa-solid fa-earth-asia"></i>
+        </span>
+        <div>
+          <small>NATIONALITY</small>
+          <span>Indian</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     CAREER
+========================= -->
+<section id="projects" class="career-section visible">
+
+  <div class="section-heading">
+  
+    <h2>Career & Milestones</h2>
+    <p>
+      A timeline of businesses, technology projects,
+      research initiatives and leadership roles.
+    </p>
+  </div>
+
+
+  <div class="career-timeline">
+
+    <!-- 2016 -->
+    <div class="career-item">
+      <div class="career-year">2016</div>
+
+      <div class="career-dot"></div>
+
+      <div class="career-card">
+        <span class="career-category">EARLY BEGINNINGS</span>
+        <h3>First Business Experience</h3>
+        <p>
+          Assisted with the daily operations of my father's
+          grocery and stationery business, gaining early
+          exposure to entrepreneurship, customers and business operations.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 2017 -->
+    <div class="career-item">
+      <div class="career-year">2017</div>
+
+      <div class="career-dot"></div>
+
+      <div class="career-card">
+        <span class="career-category">ENTREPRENEURSHIP</span>
+        <h3>Founded Sree Bala Subrahmanya Graphics & Designs</h3>
+        <p>
+          Co-founded a creative design venture, beginning
+          the journey that would eventually evolve into the
+          wider SREEBALA ecosystem.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 2018 -->
+    <div class="career-item">
+      <div class="career-year">2018</div>
+
+      <div class="career-dot"></div>
+
+      <div class="career-card">
+        <span class="career-category">BRAND EVOLUTION</span>
+        <h3>Sreebala Graphics & Designs</h3>
+        <p>
+          Rebranded the venture as Sreebala Graphics & Designs
+          and continued developing the business.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 2019 -->
+    <div class="career-item">
+      <div class="career-year">2019</div>
+
+      <div class="career-dot"></div>
+
+      <div class="career-card">
+        <span class="career-category">MARINE PROJECT</span>
+        <h3>Sreebala Marine</h3>
+        <p>
+          Initiated Sreebala Marine and launched the
+          <strong>Krishnanjali Boat</strong> project.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 2021 -->
+    <div class="career-item">
+      <div class="career-year">2021</div>
+
+      <div class="career-dot"></div>
+
+      <div class="career-card">
+        <span class="career-category">DIGITAL SERVICES</span>
+        <h3>CSC & Web Development</h3>
+
+        <ul>
+          <li>Worked as a VLE with CSC e-Governance Services India Ltd.</li>
+          <li>
+            Developed the <strong>Kunjithai Temple Website</strong>
+            as a devotional offering / Guru Dakshina.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- 2022 -->
+    <div class="career-item">
+      <div class="career-year">2022</div>
+
+      <div class="career-dot"></div>
+
+      <div class="career-card">
+        <span class="career-category">BANKING • MOBILE • AUTOMATION</span>
+        <h3>Technology & Business Expansion</h3>
+
+        <ul>
+          <li>Worked as BC with Bank of India.</li>
+          <li>
+            Released the <strong>Kunjithai Temple Android App</strong>
+            on October 28.
+          </li>
+          <li>
+            Launched <strong>Sreebala Electronics & Automation</strong>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- 2024 -->
+    <div class="career-item">
+      <div class="career-year">2024</div>
+
+      <div class="career-dot"></div>
+
+      <div class="career-card featured">
+        <span class="career-category">SREEBALA TECHNOLOGY</span>
+
+        <h3>
+          Co-Founder & Designated Partner
+        </h3>
+
+        <p>
+          Became Co-Founder & Designated Partner of
+          <strong>SREEBALA TECHNOLOGY SERVICES LLP</strong>
+          on April 24.
+        </p>
+
+        <div class="career-mini">
+          <i class="fa-solid fa-flask"></i>
+          <span>
+            Co-Founder & Project Director —
+            Sreebala Research & Innovation, DEV Department
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 2025 -->
+    <div class="career-item">
+      <div class="career-year">2025</div>
+
+      <div class="career-dot"></div>
+
+      <div class="career-card featured">
+        <span class="career-category">TECHNOLOGY LEADERSHIP</span>
+
+        <h3>Co-Founder & CTO — SREEBALA</h3>
+
+        <p>
+          Took on technology leadership responsibilities across
+          SREEBALA's engineering, product development and
+          research initiatives.
+        </p>
+
+        <div class="career-projects">
+
+          <div>
+            <i class="fa-solid fa-taxi"></i>
+            <span>
+              Co-Founder & CTO — <strong>SreebalaTaxi</strong>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-heart"></i>
+            <span>
+              Co-Founder & CEO —
+              <strong>INDINO – Relationship Beyond Commerce</strong>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-font"></i>
+            <span>
+              Project Director —
+              <strong>Sreebala Fonts</strong>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-flask-vial"></i>
+            <span>
+              Engaged in scientific R&D initiatives.
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 2026 -->
+    <div class="career-item">
+      <div class="career-year">2026</div>
+
+      <div class="career-dot active"></div>
+
+      <div class="career-card current">
+
+        <div class="current-badge">
+          <span></span> CURRENT CHAPTER
+        </div>
+
+        <span class="career-category">
+          RESEARCH • TECHNOLOGY • ENGINEERING
+        </span>
+
+        <h3>Building the Next Technology Ecosystem</h3>
+
+        <p>
+          Expanded technology, research and product initiatives
+          across multiple domains under the SREEBALA™ ecosystem.
+        </p>
+
+        <div class="career-2026-grid">
+
+          <div class="mini-project">
+            <i class="fa-solid fa-network-wired"></i>
+            <div>
+              <strong>RD&I Technology Platform</strong>
+              <p>
+                Research, Development & Innovation platform
+                connecting multiple technology and scientific domains.
+              </p>
+            </div>
+          </div>
+
+          <div class="mini-project">
+            <i class="fa-solid fa-star"></i>
+            <div>
+              <strong>Astrology vs Astronomy</strong>
+              <p>
+                Research program exploring scientific validation,
+                historical star mapping and cultural astronomy.
+              </p>
+            </div>
+          </div>
+
+          <div class="mini-project">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <div>
+              <strong>INDINO</strong>
+              <p>
+                Officially released the INDINO app in Test Mode (QA)
+                with the website launch on April 15.
+              </p>
+            </div>
+          </div>
+
+          <div class="mini-project">
+            <i class="fa-solid fa-users"></i>
+            <div>
+              <strong>Finest Matrimony</strong>
+              <p>
+                Led major platform updates involving UX,
+                matchmaking, security, performance and stability.
+              </p>
+            </div>
+          </div>
+
+          <div class="mini-project">
+            <i class="fa-solid fa-sitemap"></i>
+            <div>
+              <strong>Chief Project Officer</strong>
+              <p>
+                Led strategic project planning, execution and
+                innovation initiatives.
+              </p>
+            </div>
+          </div>
+
+          <div class="mini-project">
+            <i class="fa-solid fa-microchip"></i>
+            <div>
+              <strong>CTO & Chief Engineer</strong>
+              <p>
+                Transitioned into technology leadership with focus
+                on engineering, R&D and strategic initiatives.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section id="honor" class="legacy-section visible">
+
+  <div class="section-heading">
+    
+    <h2>I feel it would be ungrateful of me if I didn’t introduce.</h2>
+    <p>Family legacy, service and gratitude.</p>
+  </div>
+
+  <div class="legacy-card">
+
+    <div class="legacy-medal">
+     <div class="war">
+  ⚔️
+</div>
+
+    </div>
+
+    <div class="legacy-content">
+
+      <span class="legacy-label">INDIAN ARMY (MEG-BLR) • 1961 — 1998</span>
+
+      <h3>Sadasivan Valyakkal Echaran</h3>
+
+      <p class="legacy-role">
+         Indian Army & Navy Veteran
+      </p>
+
+      <div class="medal-list">
+        <span>Poorvi Star</span>
+        <span>Raksha Medal</span>
+        <span>Sangram Medal</span>
+        <span>Sainya Seva Medal</span>
+        <span>Long Service Medal</span>
+      </div>
+
+      <div class="legacy-divider"></div>
+
+      <p class="legacy-thanks">
+        Gratitude to
+        <strong>Sajeevan Valyakkal Sadasivan</strong>,
+        CEO/Director of Sreebala, for the opportunity to lead
+        engineering innovation at Sreebala.
+      </p>
+
+      <div class="legacy-motto">
+        <i class="fa-solid fa-quote-left"></i>
+        <span>Bharat Seva Paramo Dharmah</span>
+        <i class="fa-solid fa-quote-right"></i>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
   <section id="contact" class="visible">
     <h2>Contact</h2>

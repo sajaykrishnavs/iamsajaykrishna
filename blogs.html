@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sajaykrishna | Blogs</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f8fafc;
+      color: #222;
+      line-height: 1.6;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+      background: linear-gradient(
+        135deg,
+        #00c6ff,
+        #0072ff
+      );
+
+      color: white;
+
+      padding: 16px 45px;
+
+      position: sticky;
+      top: 0;
+
+      z-index: 1000;
+
+      box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-inner {
+      max-width: 1250px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      color: white;
+      text-decoration: none;
+    }
+
+    .brand h1 {
+      font-size: 1.5rem;
+    }
+
+    .brand p {
+      font-size: .85rem;
+      opacity: .9;
+    }
+
+    .back-btn {
+      background: white;
+      color: #0072ff;
+
+      padding: 8px 16px;
+
+      border-radius: 25px;
+
+      text-decoration: none;
+
+      font-weight: 700;
+
+      transition: .3s;
+    }
+
+    .back-btn:hover {
+      background: #0072ff;
+      color: white;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      max-width: 1100px;
+
+      margin: auto;
+
+      text-align: center;
+
+      padding: 65px 20px 45px;
+    }
+
+    .hero-label {
+      display: inline-block;
+
+      background: #e7f5ff;
+
+      color: #0072ff;
+
+      padding: 6px 15px;
+
+      border-radius: 20px;
+
+      font-size: .8rem;
+
+      font-weight: 700;
+
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+
+      color: #111827;
+
+      margin-bottom: 12px;
+    }
+
+    .hero h2 span {
+      color: #0072ff;
+    }
+
+    .hero p {
+      max-width: 700px;
+
+      margin: auto;
+
+      color: #6b7280;
+
+      font-size: 1rem;
+    }
+
+
+    /* =========================
+       BLOG AREA
+       ========================= */
+
+    .blogs {
+      max-width: 1000px;
+
+      margin: auto;
+
+      padding: 10px 20px 70px;
+    }
+
+    .blogs-title {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      border-bottom: 2px solid #e5e7eb;
+
+      padding-bottom: 12px;
+
+      margin-bottom: 10px;
+    }
+
+    .blogs-title h3 {
+      color: #111827;
+
+      font-size: 1.5rem;
+    }
+
+    .blogs-title span {
+      color: #9ca3af;
+
+      font-size: .85rem;
+    }
+
+
+    /* =========================
+       LINE-WISE BLOG
+       ========================= */
+
+    .blog-row {
+      display: flex;
+
+      align-items: center;
+
+      gap: 25px;
+
+      background: white;
+
+      padding: 20px;
+
+      border-bottom: 1px solid #e5e7eb;
+
+      transition: .3s ease;
+    }
+
+    .blog-row:first-child {
+      border-radius: 12px 12px 0 0;
+    }
+
+    .blog-row:last-child {
+      border-radius: 0 0 12px 12px;
+      border-bottom: none;
+    }
+
+    .blog-row:hover {
+      background: #f8fbff;
+
+      transform: translateX(5px);
+
+      box-shadow:
+        0 8px 25px rgba(0, 114, 255, .08);
+    }
+
+
+    /* BLOG NUMBER */
+
+    .blog-number {
+      min-width: 55px;
+
+      height: 55px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: linear-gradient(
+        135deg,
+        #00c6ff,
+        #0072ff
+      );
+
+      color: white;
+
+      font-size: 1rem;
+
+      font-weight: 700;
+    }
+
+
+    /* ICON */
+
+    .blog-icon {
+      min-width: 65px;
+
+      height: 65px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 12px;
+
+      background: #eef7ff;
+
+      color: #0072ff;
+
+      font-size: 1.7rem;
+    }
+
+
+    /* CONTENT */
+
+    .blog-content {
+      flex: 1;
+    }
+
+    .category {
+      color: #0072ff;
+
+      font-size: .7rem;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+    .blog-content h4 {
+      color: #111827;
+
+      font-size: 1.2rem;
+
+      margin: 3px 0 5px;
+    }
+
+    .blog-content p {
+      color: #6b7280;
+
+      font-size: .88rem;
+
+      max-width: 700px;
+    }
+
+
+    /* READ BUTTON */
+
+    .read-btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      white-space: nowrap;
+
+      color: #0072ff;
+
+      font-size: .85rem;
+
+      font-weight: 700;
+
+      text-decoration: none;
+
+      padding: 9px 14px;
+
+      border: 1px solid #d8eaff;
+
+      border-radius: 20px;
+
+      transition: .3s;
+    }
+
+    .read-btn:hover {
+      background: #0072ff;
+
+      color: white;
+
+      border-color: #0072ff;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      background: #222;
+
+      color: #aaa;
+
+      text-align: center;
+
+      padding: 30px 20px;
+
+      margin-top: 30px;
+    }
+
+    footer p {
+      margin: 5px;
+      font-size: .85rem;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 14px 18px;
+      }
+
+      .brand h1 {
+        font-size: 1.1rem;
+      }
+
+      .brand p {
+        font-size: .72rem;
+      }
+
+      .back-btn {
+        padding: 7px 12px;
+        font-size: .78rem;
+      }
+
+      .hero {
+        padding: 50px 18px 35px;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .blog-row {
+        gap: 14px;
+
+        padding: 16px;
+
+        align-items: flex-start;
+      }
+
+      .blog-number {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+
+        font-size: .8rem;
+      }
+
+      .blog-icon {
+        min-width: 48px;
+        width: 48px;
+        height: 48px;
+
+        font-size: 1.2rem;
+      }
+
+      .blog-content h4 {
+        font-size: 1rem;
+      }
+
+      .blog-content p {
+        font-size: .8rem;
+      }
+
+      .read-btn {
+        padding: 7px 10px;
+        font-size: .75rem;
+      }
+
+      .blogs-title span {
+        display: none;
+      }
+    }
+
+
+    @media (max-width: 500px) {
+
+      .blog-row {
+        display: grid;
+
+        grid-template-columns: 42px 50px 1fr;
+      }
+
+      .read-btn {
+        grid-column: 3;
+
+        width: fit-content;
+
+        margin-top: 3px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header>
+
+    <div class="header-inner">
+
+      <a href="index.html" class="brand">
+
+        <h1>
+          Sajaykrishna Valyakkal Sajeevan
+        </h1>
+
+        <p>
+          Co-Founder &amp; CTO at Sreebala™
+        </p>
+
+      </a>
+
+
+      <a href="index.html" class="back-btn">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Profile
+
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       HERO
+       ========================= -->
+
+  <section class="hero">
+
+    <span class="hero-label">
+
+      <i class="fa-solid fa-pen-nib"></i>
+
+      WRITINGS
+
+    </span>
+
+
+    <h2>
+      Ideas. Research. <span>Engineering.</span>
+    </h2>
+
+
+    <p>
+      Thoughts, technical experiments, research,
+      engineering experiences and ideas from my
+      journey through technology and innovation.
+    </p>
+
+  </section>
+
+
+
+  <!-- =========================
+       BLOG LIST
+       ========================= -->
+
+  <section class="blogs">
+
+
+    <div class="blogs-title">
+
+      <h3>
+        Articles
+      </h3>
+
+      <span>
+        Thoughts &amp; ideas
+      </span>
+
+    </div>
+
+
+
+    <!-- BLOG 01 -->
+
+    <article class="blog-row">
+
+      <div class="blog-number">
+        01
+      </div>
+
+    
+
+      <div class="blog-content">
+
+        <span class="category">
+          Technology
+        </span>
+
+        <h4>
+          My life should be my answer to what I can do for my Nation.
+What greater answer can I give than my life itself?
+        </h4>
+
+        <p>
+          I believe that loving our Nation means contributing to its future. Through Sreebala, I want to use technology and innovation to create impact.
+        </p>
+
+      </div>
+
+      <a
+        href="blogs\s1\S1.html"
+        class="read-btn"
+      >
+        Read
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </article>
+
+
+
+    <!-- BLOG 02
+
+    <article class="blog-row">
+
+      <div class="blog-number">
+        02
+      </div>
+
+      <div class="blog-icon">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+
+      <div class="blog-content">
+
+        <span class="category">
+          AI &amp; Robotics
+        </span>
+
+        <h4>
+          Exploring AI, ML &amp; Robotics
+        </h4>
+
+        <p>
+          Notes and experiments from exploring
+          intelligent systems, machine learning
+          and robotics.
+        </p>
+
+      </div>
+
+      <a
+        href="blog-ai-robotics.html"
+        class="read-btn"
+      >
+        Read
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </article>
+ -->
+
+
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <p>
+      © 2026
+      <strong>Sajaykrishna Valyakkal Sajeevan</strong>
+    </p>
+
+    <p>
+      Co-Founder &amp; CTO at Sreebala™
+    </p>
+
+    <p>
+      Engineering · Research · Technology · Innovation
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
