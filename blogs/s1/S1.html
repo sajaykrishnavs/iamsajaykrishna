@@ -1,596 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="Technical writings, research, engineering experiences and ideas from Sajaykrishna Valyakkal Sajeevan.">
-
-  <title>Sajaykrishna | Writings</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    rel="stylesheet">
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>My First Blog Post</title>
 
   <style>
-    :root {
-      --primary: #0072ff;
-      --secondary: #00c6ff;
-      --text: #222;
-      --heading: #111827;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --surface: #fff;
-      --background: #f8fafc;
-    }
-
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
     body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #333;
+      margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: var(--background);
-      color: var(--text);
       line-height: 1.6;
-      min-height: 100vh;
-      overflow-wrap: anywhere;
     }
 
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    a:focus-visible {
-      outline: 3px solid #ffbf47;
-      outline-offset: 4px;
-    }
-
-    /* HEADER */
-
+    /* Header */
     header {
-      background: linear-gradient(
-        135deg,
-        var(--secondary),
-        var(--primary)
-      );
+      background: linear-gradient(135deg, #2f71ff, #2563eb);
       color: white;
-      padding: 16px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
-    }
-
-    .header-inner {
-      max-width: 1250px;
-      margin: auto;
+      padding: 18px 30px;
       display: flex;
-      align-items: center;
+      font: 1em sans-serif;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     }
 
-    .brand {
+
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .home-btn {
       color: white;
       text-decoration: none;
-      min-width: 0;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: 0.3s;
     }
 
-    .brand h1 {
-      font-size: 1.5rem;
-      line-height: 1.3;
-    }
-
-    .brand p {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
-
-    .back-btn {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+    .home-btn:hover {
       background: white;
-      color: var(--primary);
-      padding: 8px 16px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: background 0.25s, color 0.25s;
+      color: #2563eb;
     }
 
-    .back-btn:hover {
-      background: #005bd1;
-      color: white;
-    }
-
-    /* HERO */
-
-    .hero {
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-      padding: 65px 20px 45px;
-    }
-
-    .hero-label {
-      display: inline-block;
-      background: #e7f5ff;
-      color: var(--primary);
-      padding: 6px 15px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
-    .hero h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.2;
-      color: var(--heading);
-      margin-bottom: 16px;
-    }
-
-    .hero h2 span {
-      color: var(--primary);
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    /* BLOG AREA */
-
-    .blogs {
-      max-width: 1000px;
-      width: 100%;
-      margin: auto;
-      padding: 10px 20px 70px;
-    }
-
-    .blogs-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 12px;
-      margin-bottom: 10px;
-    }
-
-    .blogs-title h3 {
-      color: var(--heading);
-      font-size: 1.5rem;
-    }
-
-    .blogs-title span {
-      color: #9ca3af;
-      font-size: 0.85rem;
-    }
-
-    /* ARTICLE ROW */
-
-    .blog-row {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      background: var(--surface);
-      padding: 22px;
-      border-bottom: 1px solid var(--border);
-      transition:
-        background 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
-    }
-
-    .blog-row:first-of-type {
-      border-radius: 12px 12px 0 0;
-    }
-
-    .blog-row:last-of-type {
-      border-radius: 0 0 12px 12px;
-      border-bottom: none;
-    }
-
-    .blog-row:hover {
-      background: #f8fbff;
-      box-shadow: 0 8px 25px rgba(0, 114, 255, 0.08);
-    }
-
-    /* NUMBER */
-
-    .blog-number {
-      flex: 0 0 55px;
-      width: 55px;
-      height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: linear-gradient(
-        135deg,
-        var(--secondary),
-        var(--primary)
-      );
-      color: white;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    /* ICON */
-
-    .blog-icon {
-      flex: 0 0 60px;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      background: #eef7ff;
-      color: var(--primary);
-      font-size: 1.6rem;
-    }
-
-    /* CONTENT */
-
-    .blog-content {
-      flex: 1;
-      min-width: 0;
+    /* Main Post */
+    .post {
+      max-width: 850px;
+      margin: 45px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
     }
 
     .category {
       display: inline-block;
-      color: var(--primary);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      background: #e8f0ff;
+      color: #2563eb;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
 
-    .blog-content h4 {
-      color: var(--heading);
-      font-size: 1.15rem;
-      line-height: 1.5;
-      margin: 4px 0 7px;
-      overflow-wrap: anywhere;
+    h1 {
+      font-size: 38px;
+      color: #111827;
+      margin: 5px 0 15px;
     }
 
-    .blog-content p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.7;
-      max-width: 700px;
+    .subtitle {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 25px;
     }
 
-    /* READ BUTTON */
+    /* Author Information */
+    .author-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 18px 0;
+      margin-bottom: 30px;
+    }
 
-    .read-btn {
-      flex-shrink: 0;
-      display: inline-flex;
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      background: #2563eb;
+      color: white;
+      border-radius: 50%;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
-      white-space: nowrap;
-      color: var(--primary);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 9px 14px;
-      border: 1px solid #d8eaff;
-      border-radius: 20px;
-      transition:
-        background 0.25s,
-        color 0.25s,
-        border-color 0.25s;
+      font-size: 20px;
+      font-weight: bold;
     }
 
-    .read-btn:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
+    .author-name {
+      font-weight: bold;
+      color: #222;
     }
 
-    .read-btn:focus-visible {
-      outline: 3px solid #80b5ff;
-      outline-offset: 3px;
+    .post-info {
+      color: #888;
+      font-size: 14px;
+      margin-top: 4px;
     }
 
-    /* FOOTER */
+    /* Article */
+    p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
 
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 30px 20px;
+    .post-image {
+      width: 50%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 20px 0;
+      background: #ddd;
+    }
+
+    /* Tags */
+    .tags {
       margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
     }
 
-    footer p {
-      margin: 5px;
-      font-size: 0.85rem;
+    .tag {
+      display: inline-block;
+      background: #f0f2f5;
+      color: #555;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin: 5px 5px 5px 0;
     }
 
-    footer strong {
-      color: white;
+    .back-home {
+      display: inline-block;
+      margin-top: 25px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* TABLET AND MOBILE */
+    .back-home:hover {
+      text-decoration: underline;
+    }
 
-    @media (max-width: 700px) {
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
       header {
-        padding: 14px 18px;
+        padding: 15px 20px;
       }
 
-      .header-inner {
-        gap: 12px;
+      .logo {
+        font-size: 20px;
       }
 
-      .brand h1 {
-        font-size: 1.1rem;
+      .post {
+        margin: 25px 15px;
+        padding: 25px;
       }
 
-      .brand p {
-        font-size: 0.72rem;
+      h1 {
+        font-size: 29px;
       }
 
-      .back-btn {
-        padding: 8px 12px;
-        font-size: 0.78rem;
-      }
-
-      .hero {
-        padding: 50px 18px 35px;
-      }
-
-      .hero p {
-        font-size: 0.93rem;
-      }
-
-      .blogs {
-        padding: 10px 16px 50px;
-      }
-
-      .blog-row {
-        gap: 14px;
-        padding: 18px;
-      }
-
-      .blog-number {
-        flex-basis: 42px;
-        width: 42px;
-        height: 42px;
-        font-size: 0.8rem;
-      }
-
-      .blog-icon {
-        flex-basis: 48px;
-        width: 48px;
-        height: 48px;
-        font-size: 1.2rem;
-      }
-
-      .blog-content h4 {
-        font-size: 1rem;
-      }
-
-      .blog-content p {
-        font-size: 0.82rem;
-      }
-
-      .read-btn {
-        padding: 8px 11px;
-        font-size: 0.78rem;
+      .post-image {
+        height: 100px;
       }
     }
 
-    /* SMALL PHONES */
 
-    @media (max-width: 500px) {
-      .brand h1 {
-        font-size: 0.95rem;
-      }
+    .author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
 
-      .brand p {
-        font-size: 0.68rem;
-      }
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-      .back-btn {
-        gap: 5px;
-        padding: 7px 10px;
-      }
 
-      .hero h2 {
-        font-size: 2rem;
-      }
 
-      .blogs-title h3 {
-        font-size: 1.3rem;
-      }
+.post-image {
 
-      .blogs-title span {
-        display: none;
-      }
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+}
 
-      .blog-row {
-        display: grid;
-        grid-template-columns: 38px minmax(0, 1fr);
-        gap: 12px;
-        padding: 16px 13px;
-        align-items: start;
-      }
+.post-image img {
+ 
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-      .blog-number {
-        grid-column: 1;
-        grid-row: 1;
-        width: 38px;
-        height: 38px;
-      }
 
-      .blog-icon {
-        display: none;
-      }
-
-      .blog-content {
-        grid-column: 2;
-        grid-row: 1;
-      }
-
-      .blog-content h4 {
-        font-size: 0.98rem;
-        line-height: 1.5;
-      }
-
-      .blog-content p {
-        font-size: 0.82rem;
-      }
-
-      .read-btn {
-        grid-column: 2;
-        grid-row: 2;
-        justify-self: start;
-        margin-top: 0;
-      }
-
-      footer {
-        padding: 25px 15px;
-      }
-
-      footer p {
-        font-size: 0.78rem;
-      }
-    }
-
-    /* REDUCED MOTION */
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-
+  <!-- Header -->
   <header>
-    <div class="header-inner">
+    <div class="logo" style="font-size:medium;">Sajaykrishna Valyakkal Sajeevan &nbsp;&nbsp;&nbsp;&nbsp; | (What If?)
+      <br> <small>Co-Founder & CTO at
+        Sreebala</small> </div>
 
-      <a href="index.html" class="brand">
-        <h1>Sajaykrishna Valyakkal Sajeevan</h1>
-        <p>Co-Founder &amp; CTO at Sreebala™</p>
-      </a>
-
-      <a href="index.html" class="back-btn">
-        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-        <span>Profile</span>
-      </a>
-
-    </div>
+    <a href="../../blogs.html" class="home-btn">
+      🏠 Home
+    </a>
   </header>
 
-  <!-- HERO -->
 
-  <section class="hero">
-    <span class="hero-label">
-      <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
-      WRITINGS
-    </span>
+  <!-- Blog Post -->
+  <article class="post">
 
-    <h2>
-      Ideas. Research. <span>Engineering.</span>
-    </h2>
+    <!-- Category -->
+    <span class="category">Sreebala</span>
 
-    <p>
-      Thoughts, technical experiments, research,
-      engineering experiences and ideas from my
-      journey through technology and innovation.
+    <!-- Title -->
+    <h2>My life should be my answer to what I can do for my Nation. <br> What greater answer can I give than my life itself?</h2>
+
+    <p class="subtitle">
+      I don’t need a uniform to serve my nation. My life is for my Nation.
     </p>
-  </section>
 
-  <!-- BLOG LIST -->
 
-  <main class="blogs">
+    <!-- Author Information -->
+    <div class="author-box">
 
-    <div class="blogs-title">
-      <h3>Articles</h3>
-      <span>Thoughts &amp; ideas</span>
+      <div class="author-avatar">
+  <img src="../../20260923_170124.jpg" alt="Author">
+</div>
+
+
+      <div>
+        <div class="author-name">
+          Written by Sajaykrishna Valyakkal Sajeevan
+        </div>
+
+        <div class="post-info">
+          📅 Published: October 3, 2026
+          &nbsp; • &nbsp;
+          🔄 Updated: October 3, 2026
+
+
+        </div>
+      </div>
+
     </div>
 
-    <article class="blog-row">
 
-      <div class="blog-number" aria-hidden="true">01</div>
+   <!-- Blog Image -->
+<div class="post-image">
+  <img src="../../20260923_170124.jpg" alt="Sreebala">
+</div>
 
-      <div class="blog-icon" aria-hidden="true">
-        <i class="fa-solid fa-lightbulb"></i>
-      </div>
 
-      <div class="blog-content">
-        <span class="category">Technology</span>
 
-        <h4>
-          My life should be my answer to what I can do
-          for my Nation. What greater answer can I give
-          than my life itself?
-        </h4>
+   
+    <p> I believe that loving our Nation means contributing to its future. Through Sreebala, I want to use technology
+      and innovation to create impact. </p>
+    <p> As Co-Founder & CTO, my goal is to build something from India that can make a meaningful impact. I believe in
+      learning, creating, working hard, and building a better future. </p>
+    <p> <strong>Think for Bharat. Build for Bharat. Grow with Bharat.</strong> </p>
 
-        <p>
-          I believe that loving our Nation means
-          contributing to its future. Through Sreebala,
-          I want to use technology and innovation
-          to create impact.
-        </p>
-      </div>
+    <!-- Tags -->
+    <div class="tags">
+      <strong>Tags:</strong>
 
-      <a href="blogs/s1/S1.html" class="read-btn"
-         aria-label="Read: My life should be my answer to what I can do for my Nation">
-        Read
-        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-      </a>
+      <span class="tag">Technology</span>
 
-    </article>
+    </div>
 
-    <!-- Add more article rows here -->
 
-  </main>
+  <a href="../../index.html" class="back-home">
+  ← Back to Home
+</a>
 
-  <!-- FOOTER -->
 
+  </article>
+
+
+  <!-- Footer -->
   <footer>
-    <p>
-      © 2026
-      <strong>Sajaykrishna Valyakkal Sajeevan</strong>
-    </p>
-
-    <p>Co-Founder &amp; CTO at Sreebala™</p>
-
-    <p>Engineering · Research · Technology · Innovation</p>
+    © 2026 My Blog. All rights reserved.
   </footer>
 
 </body>
+
 </html>
