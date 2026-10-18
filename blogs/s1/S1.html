@@ -4,325 +4,644 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Blog Post</title>
+
+  <title>My First Blog Post | Sajaykrishna</title>
+
+  <meta name="description" content="My thoughts on serving our Nation through technology, engineering, and innovation.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #333;
-      margin: 0;
       font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.7;
+      overflow-x: clip;
     }
 
-    /* Header */
+    img {
+      max-width: 100%;
+    }
+
+    /* HEADER */
+
     header {
-      background: linear-gradient(135deg, #2f71ff, #2563eb);
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
       color: white;
-      padding: 18px 30px;
-      display: flex;
-      font: 1em sans-serif;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
     }
 
+    .header-inner {
 
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-width: 0;
+    }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
+    .brand {
+      color: white;
+      text-decoration: none;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .brand h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .brand p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      line-height: 1.5;
     }
 
     .home-btn {
-      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-shrink: 0;
+      background: white;
+      color: #0072ff;
+      padding: 9px 16px;
+      border-radius: 25px;
       text-decoration: none;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 10px 18px;
-      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
       transition: 0.3s;
     }
 
     .home-btn:hover {
-      background: white;
-      color: #2563eb;
+      background: #e7f5ff;
+      transform: translateY(-2px);
     }
 
-    /* Main Post */
+    /* HERO */
+
+    .hero {
+      max-width: 1000px;
+      margin: auto;
+      padding: 45px 20px 10px;
+      text-align: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background: #e7f5ff;
+      color: #0072ff;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      line-height: 1.35;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 span {
+      color: #0072ff;
+    }
+
+    .hero p {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    /* MAIN ARTICLE */
+
     .post {
-      max-width: 850px;
-      margin: 45px auto;
+      width: calc(100% - 40px);
+      max-width: 1000px;
+      margin: 25px auto 60px;
       background: white;
       padding: 40px;
       border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      min-width: 0;
     }
 
     .category {
       display: inline-block;
-      background: #e8f0ff;
-      color: #2563eb;
-      padding: 6px 12px;
+      background: #e7f5ff;
+      color: #0072ff;
+      padding: 6px 14px;
       border-radius: 20px;
-      font-size: 13px;
-      font-weight: bold;
+      font-size: 1rem;
+      font-weight: 700;
       margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
     }
 
-    h1 {
-      font-size: 38px;
+    .post h1 {
       color: #111827;
-      margin: 5px 0 15px;
+      font-size: 2.2rem;
+      line-height: 1.4;
+      font-weight: 700;
+      margin: 0 0 16px;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
 
     .subtitle {
-      color: #666;
-      font-size: 18px;
+      color: #6b7280;
+      font-size: 1.43rem;
+      line-height: 1.8;
       margin-bottom: 25px;
     }
 
-    /* Author Information */
+    /* AUTHOR INFORMATION */
+
     .author-box {
       display: flex;
       align-items: center;
       gap: 15px;
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
       padding: 18px 0;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+      min-width: 0;
     }
 
     .author-avatar {
-      width: 50px;
-      height: 50px;
-      background: #2563eb;
-      color: white;
+      width: 55px;
+      height: 55px;
+      flex: 0 0 55px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: bold;
+      overflow: hidden;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+
+    .author-avatar img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-details {
+      min-width: 0;
     }
 
     .author-name {
-      font-weight: bold;
-      color: #222;
+      color: #111827;
+      font-size: 0.92rem;
+      font-weight: 700;
+      overflow-wrap: anywhere;
     }
 
     .post-info {
-      color: #888;
-      font-size: 14px;
+      color: #9ca3af;
+      font-size: 0.78rem;
       margin-top: 4px;
+      overflow-wrap: anywhere;
     }
 
-    /* Article */
-    p {
-      font-size: 17px;
-      line-height: 1.8;
-    }
+    /* ARTICLE IMAGE */
 
     .post-image {
-      width: 50%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin: 20px 0;
-      background: #ddd;
+      width: 100%;
+      max-width: 650px;
+      margin: 25px auto 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #eef7ff;
     }
 
-    /* Tags */
+    .post-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      object-fit: cover;
+    }
+
+    /* ARTICLE CONTENT */
+
+    .article-content {
+      max-width: 780px;
+      margin: auto;
+      min-width: 0;
+    }
+
+    .article-content p {
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+
+    .article-content strong {
+      color: #111827;
+      font-weight: 700;
+    }
+
+    .article-highlight {
+      color: #0072ff !important;
+      font-size: 1.1rem !important;
+      font-weight: 700;
+      padding: 16px 20px;
+      background: #f0f8ff;
+      border-left: 4px solid #0072ff;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* TAGS */
+
     .tags {
       margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
+      padding-top: 22px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .tags strong {
+      color: #111827;
+      font-size: 0.9rem;
+      margin-right: 8px;
     }
 
     .tag {
       display: inline-block;
-      background: #f0f2f5;
-      color: #555;
+      background: #f3f4f6;
+      color: #4b5563;
       padding: 6px 12px;
       border-radius: 20px;
-      font-size: 13px;
+      font-size: 0.78rem;
       margin: 5px 5px 5px 0;
     }
 
+    /* BACK LINKS */
+
+    .post-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
     .back-home {
-      display: inline-block;
-      margin-top: 25px;
-      color: #2563eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #0072ff;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 9px 14px;
+      border: 1px solid #d8eaff;
+      border-radius: 25px;
+      transition: 0.3s;
     }
 
     .back-home:hover {
-      text-decoration: underline;
+      background: #0072ff;
+      color: white;
+      border-color: #0072ff;
     }
 
-    /* Footer */
+    /* FOOTER */
+
     footer {
+      background: #222;
+      color: #aaa;
       text-align: center;
-      color: #777;
-      padding: 25px;
-      font-size: 14px;
+      padding: 30px 20px;
+      margin-top: 30px;
     }
 
-    /* Mobile */
-    @media (max-width: 600px) {
-      header {
-        padding: 15px 20px;
+    footer p {
+      margin: 5px;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 20px 5px;
       }
 
-      .logo {
-        font-size: 20px;
+      .hero h2 {
+        font-size: 1.9rem;
       }
 
       .post {
-        margin: 25px 15px;
-        padding: 25px;
+        padding: 30px;
       }
 
-      h1 {
-        font-size: 29px;
-      }
-
-      .post-image {
-        height: 100px;
+      .post h1 {
+        font-size: 1.9rem;
       }
     }
 
+    /* MOBILE */
 
-    .author-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
+    @media (max-width: 600px) {
+      header {
+        padding: 14px 15px;
+      }
 
-.author-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+      .header-inner {
+        gap: 10px;
+      }
 
+      .brand h1 {
+        font-size: 1rem;
+      }
 
+      .brand p {
+        font-size: 0.72rem;
+      }
 
-.post-image {
+      .home-btn {
+        padding: 8px 11px;
+        font-size: 0.75rem;
+      }
 
-  height: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 20px 0;
-}
+      .hero {
+        padding: 35px 16px 5px;
+      }
 
-.post-image img {
- 
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+      .hero h2 {
+        font-size: 1.65rem;
+        line-height: 1.4;
+      }
 
+      .hero p {
+        font-size: 0.88rem;
+      }
 
+      .post {
+        width: calc(100% - 24px);
+        margin: 20px auto 40px;
+        padding: 22px 17px;
+        border-radius: 12px;
+      }
+
+      .post h1 {
+        font-size: 1.45rem;
+        line-height: 1.5;
+      }
+
+      .subtitle {
+        font-size: 0.92rem;
+        line-height: 1.8;
+      }
+
+      .author-box {
+        align-items: flex-start;
+        gap: 11px;
+        padding: 15px 0;
+      }
+
+      .author-avatar {
+        width: 44px;
+        height: 44px;
+        flex-basis: 44px;
+      }
+
+      .author-name {
+        font-size: 0.82rem;
+        line-height: 1.6;
+      }
+
+      .post-info {
+        font-size: 0.72rem;
+        line-height: 1.7;
+      }
+
+      .post-image {
+        margin: 20px auto 25px;
+      }
+
+      .post-image img {
+        max-height: 300px;
+      }
+
+      .article-content p {
+        font-size: 1.4rem;
+        line-height: 1.85;
+        margin-bottom: 18px;
+      }
+
+      .article-highlight {
+        font-size: 0.95rem !important;
+        padding: 13px 14px;
+      }
+
+      .post-navigation {
+        align-items: flex-start;
+      }
+
+      footer {
+        padding: 25px 15px;
+      }
+    }
+
+    /* SMALL MOBILE */
+
+    @media (max-width: 360px) {
+      .header-inner {
+        gap: 7px;
+      }
+
+      .brand h1 {
+        font-size: 0.88rem;
+      }
+
+      .brand p {
+        font-size: 0.68rem;
+      }
+
+      .home-btn {
+        padding: 7px 9px;
+        font-size: 0.7rem;
+      }
+
+      .post {
+        padding: 18px 14px;
+      }
+
+      .post h1 {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo" style="font-size:medium;">Sajaykrishna Valyakkal Sajeevan &nbsp;&nbsp;&nbsp;&nbsp; | (What If?)
-      <br> <small>Co-Founder & CTO at
-        Sreebala</small> </div>
+  <!-- HEADER -->
 
-    <a href="../../blogs.html" class="home-btn">
-      🏠 Home
-    </a>
+  <header>
+    <div class="header-inner">
+
+      <a href="../../index.html" class="brand">
+        <h1>Sajaykrishna Valyakkal Sajeevan</h1>
+        <p>Co-Founder &amp; CTO, Sreebala™</p>
+      </a>
+
+      <a href="../../blogs.html" class="home-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Writings
+      </a>
+
+    </div>
   </header>
 
+  <!-- HERO -->
 
-  <!-- Blog Post -->
-  <article class="post">
+ 
+  <!-- BLOG POST -->
 
-    <!-- Category -->
-    <span class="category">Sreebala</span>
+  <main>
 
-    <!-- Title -->
-    <h2>My life should be my answer to what I can do for my Nation. <br> What greater answer can I give than my life itself?</h2>
+    <article class="post">
 
-    <p class="subtitle">
-      I don’t need a uniform to serve my nation. My life is for my Nation.
-    </p>
+      <span class="category">Technology &amp; Nation</span>
 
+      <h1>
+        My life should be my answer to what I can do for my Nation.
+        What greater answer can I give than my life itself?
+      </h1>
 
-    <!-- Author Information -->
-    <div class="author-box">
+      <p class="subtitle">
+        I don’t need a uniform to serve my Nation.
+        My life is for my Nation.
+      </p>
 
-      <div class="author-avatar">
-  <img src="../../20260923_170124.jpg" alt="Author">
-</div>
+      <!-- AUTHOR INFORMATION -->
 
+      <div class="author-box">
 
-      <div>
-        <div class="author-name">
-          Written by Sajaykrishna Valyakkal Sajeevan
+        <div class="author-avatar">
+          <img src="../../20260923_170124.jpg" alt="Sajaykrishna Valyakkal Sajeevan">
         </div>
 
-        <div class="post-info">
-          📅 Published: October 3, 2026
-          &nbsp; • &nbsp;
-          🔄 Updated: October 3, 2026
+        <div class="author-details">
 
+          <div class="author-name">
+            Written by Sajaykrishna Valyakkal Sajeevan
+          </div>
+
+          <div class="post-info">
+            <i class="fa-regular fa-calendar"></i>
+            Published: October 3, 2026
+            &nbsp; · &nbsp;
+            Updated: October 3, 2026
+          </div>
 
         </div>
+
       </div>
 
-    </div>
+      <!-- BLOG IMAGE -->
 
+      <div class="post-image">
+        <img src="../../20260923_170124.jpg" alt="Sajaykrishna and the vision of Sreebala">
+      </div>
 
-   <!-- Blog Image -->
-<div class="post-image">
-  <img src="../../20260923_170124.jpg" alt="Sreebala">
-</div>
+      <!-- ARTICLE CONTENT -->
 
+      <div class="article-content">
 
+        <p> I believe that loving our Nation means contributing to its future. Through Sreebala, I want to use
+          technology and innovation to create impact. </p>
+        <p> As Co-Founder & CTO, my goal is to build something from India that can make a meaningful impact. I
+          believe in learning, creating, working hard, and building a better future. </p>
 
-   
-    <p> I believe that loving our Nation means contributing to its future. Through Sreebala, I want to use technology
-      and innovation to create impact. </p>
-    <p> As Co-Founder & CTO, my goal is to build something from India that can make a meaningful impact. I believe in
-      learning, creating, working hard, and building a better future. </p>
-    <p> <strong>Think for Bharat. Build for Bharat. Grow with Bharat.</strong> </p>
+        <p class="article-highlight">
+          Think for Bharat. Build for Bharat. Grow with Bharat.
+        </p>
 
-    <!-- Tags -->
-    <div class="tags">
-      <strong>Tags:</strong>
+      </div>
 
-      <span class="tag">Technology</span>
+      <!-- TAGS -->
 
-    </div>
+      <div class="tags">
 
+        <strong>Tags:</strong>
 
-  <a href="../../index.html" class="back-home">
-  ← Back to Home
-</a>
+        <span class="tag">Technology</span>
+        <span class="tag">Innovation</span>
+        <span class="tag">Nation</span>
+        <span class="tag">Sreebala</span>
 
+      </div>
 
-  </article>
+      <!-- NAVIGATION -->
 
+      <div class="post-navigation">
 
-  <!-- Footer -->
+        <a href="../../blogs.html" class="back-home">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to Writings
+        </a>
+
+        <a href="../../index.html" class="back-home">
+          <i class="fa-solid fa-house"></i>
+          Profile
+        </a>
+
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 My Blog. All rights reserved.
+
+    <p>
+      © 2026
+      <strong>Sajaykrishna Valyakkal Sajeevan</strong>
+    </p>
+
+    <p>Co-Founder &amp; CTO, Sreebala™</p>
+
+    <p>Engineering · Research · Technology · Innovation</p>
+
   </footer>
 
 </body>
 
 </html>
+```

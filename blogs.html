@@ -46,7 +46,7 @@ body {
 
       color: white;
 
-      padding: 16px 45px;
+      padding: 16px 20px;
 
       position: sticky;
       top: 0;
@@ -58,9 +58,8 @@ body {
     }
 
     .header-inner {
-      max-width: 1250px;
+      /* max-width: 1250px; */
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -360,7 +359,7 @@ body {
 
     /* =========================
        FOOTER
-       ========================= */
+    ========================= */
 
     footer {
       background: #222;
@@ -492,31 +491,43 @@ body {
     .blog-row {
         display: grid;
         grid-template-columns: 40px minmax(0, 1fr);
-        gap: 10px;
+        align-items: start;
+        gap: 12px;
         padding: 14px;
+        min-width: 0;
     }
 
     .blog-number {
         grid-column: 1;
         grid-row: 1;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
     }
 
     .blog-content {
         grid-column: 2;
         grid-row: 1;
-        min-width: 0;
         width: 100%;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: normal;
     }
 
     .blog-content h4 {
-        font-size: .95rem;
+        font-size: 0.95rem;
         line-height: 1.5;
         margin: 4px 0 6px;
+        overflow-wrap: break-word;
+        word-break: normal;
     }
 
     .blog-content p {
-        font-size: .8rem;
+        max-width: 100%;
+        font-size: 0.8rem;
         line-height: 1.6;
+        overflow-wrap: break-word;
+        word-break: normal;
     }
 
     .read-btn {
@@ -524,27 +535,10 @@ body {
         grid-row: 2;
         width: fit-content;
         margin: 0;
+        justify-self: start;
     }
 }
 
-
-    @media (max-width: 500px) {
-
-      .blog-row {
-        display: grid;
-
-        grid-template-columns: 42px 50px 1fr;
-      }
-
-      .read-btn {
-        grid-column: 3;
-
-        width: fit-content;
-
-        margin-top: 3px;
-      }
-
-    }
 
   </style>
 </head>
@@ -563,13 +557,8 @@ body {
 
       <a href="index.html" class="brand">
 
-        <h1>
-          Sajaykrishna Valyakkal Sajeevan
-        </h1>
-
-        <p>
-          Co-Founder &amp; CTO at Sreebala™
-        </p>
+       <h3>Sajaykrishna Valyakkal Sajeevan</h3>
+  &nbsp;&nbsp; | Co-Founder &amp; CTO, Sreebala™
 
       </a>
 
@@ -738,7 +727,7 @@ body {
     </p>
 
     <p>
-      Co-Founder &amp; CTO at Sreebala™
+      Co-Founder &amp; CTO, Sreebala™
     </p>
 
     <p>
